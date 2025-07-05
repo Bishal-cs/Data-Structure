@@ -13,7 +13,7 @@ This repository is dedicated to my journey of learning and mastering **Data Stru
 - [Introduction](#introduction)
 - [Topics Covered](#topics-covered)
 - [How to Use This Repository](#how-to-use-this-repository)
-- [Contributing (Optional)](#contributing-optional)
+- [Personal Notes](#personal-notes)
 - [License](#license)
 
 ---
@@ -66,19 +66,3 @@ Each DSA topic will typically have its own directory. Inside each directory, you
 * A `main.c` or `test.c` for example usage and testing.
 
 To compile and run the C code, you'll generally use a C compiler like GCC:
-
-```bash
-# Navigate into a specific topic directory, e.g., 'linked_lists'
-cd linked_lists
-
-# Compile a C file
-gcc your_file.c -o your_program
-
-# Run the compiled program
-./your_program
-
-- While this is primarily a personal learning repository, if you have suggestions, spot an error, or would like to contribute a better      
-- approach to a problem, feel free to open an issue or submit a pull request!
-
-- License
-- This project is open-sourced under the MIT License. You are free to use, modify, and distribute the code for educational and personal - - purposes.
