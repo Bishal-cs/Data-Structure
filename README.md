@@ -77,12 +77,8 @@ gcc your_file.c -o your_program
 # Run the compiled program
 ./your_program
 
----
+- While this is primarily a personal learning repository, if you have suggestions, spot an error, or would like to contribute a better      
+- approach to a problem, feel free to open an issue or submit a pull request!
 
-# Contributing (Optional)
-While this is primarily a personal learning repository, if you have suggestions, spot an error, or would like to contribute a better approach to a problem, feel free to open an issue or submit a pull request!
-
-License
-This project is open-sourced under the MIT License. You are free to use, modify, and distribute the code for educational and personal purposes.
-
----
+- License
+- This project is open-sourced under the MIT License. You are free to use, modify, and distribute the code for educational and personal - - purposes.
