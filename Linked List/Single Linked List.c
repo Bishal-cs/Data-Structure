@@ -3,6 +3,8 @@ struct node {
     struct node * link;
 };
 struct node * start = NULL;
+
+// Insert First ----------------------
 void InsertFirst(int value){
     struct node * temp = (struct node *)malloc(sizeof(struct node));
     temp->data = value;
@@ -16,6 +18,7 @@ void InsertFirst(int value){
         start = temp;
     }
 }
+// Insert Last -----------------------
 void InsertEnd(int value){
     struct node * temp = (struct temp *)malloc(sizeof(struct node));
     temp->data = value;
@@ -33,4 +36,13 @@ void InsertEnd(int value){
         p->link = temp;
         temp->link = NULL;
     }
+}
+// Insert Position -------------------
+void InsertPosition(int value, int position){
+}
+// Insert After ----------------------
+void InsertAfter(int value, int afterValue){
+}
+// Insert Before ---------------------
+void InsertBefore(int value, int beforeValue){
 }
