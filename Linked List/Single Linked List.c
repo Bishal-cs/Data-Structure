@@ -88,4 +88,25 @@ void InsertAfter(int value, int afterValue){
 }
 // Insert Before ---------------------
 void InsertBefore(int value, int beforeValue){
+    struct node * temp = (struct node *)malloc(sizeof(struct node));
+    temp->data = value;
+    struct node * p = start, * q = start -> link;
+    if(start == NULL){
+        printf("Value %d not found in the list.\n", beforeValue);
+    }else{
+        while(q != NULL){
+            if(q -> data = beforeValue){
+                p -> link = temp;
+                temp -> link = q;
+            }else{
+                p = p -> link;
+                q = q -> link;
+            }
+        }if(start -> data == beforeValue){
+            temp -> link = start;
+            temp -> link = start;
+        }else{
+            printf("Value %d not found in the list.\n", beforeValue);
+        }
+    }
 }
