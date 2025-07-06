@@ -64,6 +64,27 @@ void InsertPosition(int value, int position){
 }
 // Insert After ----------------------
 void InsertAfter(int value, int afterValue){
+    struct node * temp = (struct node *)malloc(sizeof(struct node));
+    temp->data = value;
+    if(start == NULL){
+        printf("Value %d not found in the list.\n", afterValue);
+        return;
+    }else{
+        struct node * p = start, *q = start->link;
+        while(q != NULL){
+            if(p->data == afterValue){
+                p -> link = temp;
+                temp -> link = q;
+                return;
+            }else{
+                p = p -> link;
+                q = q -> link;
+            }
+        }if(p->data == afterValue){
+            p -> link = temp;
+            temp -> link = q;
+        }
+    }   
 }
 // Insert Before ---------------------
 void InsertBefore(int value, int beforeValue){
