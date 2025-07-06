@@ -39,6 +39,28 @@ void InsertEnd(int value){
 }
 // Insert Position -------------------
 void InsertPosition(int value, int position){
+    struct node * temp = (struct temp *)malloc(sizeof(struct node));
+    temp->data = value;
+    if (start == NULL){
+        temp -> link = NUll;
+        start = temp;
+    }else {
+        struct node * p = start, * q = start -> link;
+        int i = 1;
+        for(i =1; i <position -1; i++){
+            if(q != NULL){
+                p = p->link;
+                q = q->link;
+            }else
+                break;
+        } if (i < (position - 2)){
+            printf("Position is out of range\n");
+            return;
+        }else {
+            p ->link = temp;
+            temp->link = q;
+        }
+    }
 }
 // Insert After ----------------------
 void InsertAfter(int value, int afterValue){
