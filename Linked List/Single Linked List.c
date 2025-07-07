@@ -2,6 +2,7 @@ struct node {
     int data;
     struct node * link;
 };
+
 struct node * start = NULL;
 
 // Insert First ----------------------
@@ -42,7 +43,7 @@ void InsertPosition(int value, int position){
     struct node * temp = (struct temp *)malloc(sizeof(struct node));
     temp->data = value;
     if (start == NULL){
-        temp -> link = NUll;
+        temp -> link = NULL;
         start = temp;
     }else {
         struct node * p = start, * q = start -> link;
@@ -109,4 +110,40 @@ void InsertBefore(int value, int beforeValue){
             printf("Value %d not found in the list.\n", beforeValue);
         }
     }
+}
+
+// check the node number with value of the Position -------------------
+void checkNode(int value){
+    struct node * temp = (struct node *)malloc(sizeof(struct node));
+    temp->data = value;
+    struct node * p = start, * q = start -> link;
+    int c = 1;
+    while(q != NULL){
+        if(p -> data == value){
+            printf("Value %d found at position %d\n", value, c);
+            return;
+        }else{
+            p = p -> link;
+            q = q -> link;
+            c++;
+        }   
+    }
+}
+
+// check the node count  ----------------
+void NodeCount(){
+    struct node * p = start, * q = start -> link;
+    int c = 1;
+    if (start == NULL){
+        printf("Node Not Found\n");
+    }else{
+        while(q != NULL){
+        p = p -> link;
+        q = q -> link;
+        c++;
+    }
+    printf("Node count is %d\n", c);
+    return;
+    }
+
 }
