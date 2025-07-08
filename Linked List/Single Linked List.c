@@ -113,37 +113,27 @@ void InsertBefore(int value, int beforeValue){
 }
 
 // check the node number with value of the Position -------------------
-void checkNode(int value){
-    struct node * temp = (struct node *)malloc(sizeof(struct node));
-    temp->data = value;
-    struct node * p = start, * q = start -> link;
-    int c = 1;
-    while(q != NULL){
+void Search(int value){
+    struct node *p = start;
+    int c = 0;
+    while(p != NULL){
+        c++;
         if(p -> data == value){
             printf("Value %d found at position %d\n", value, c);
-            return;
-        }else{
-            p = p -> link;
-            q = q -> link;
-            c++;
-        }   
+            return c;
+        }
+        p = p -> link;
     }
+    return -1;
 }
 
 // check the node count  ----------------
 void NodeCount(){
-    struct node * p = start, * q = start -> link;
-    int c = 1;
-    if (start == NULL){
-        printf("Node Not Found\n");
-    }else{
-        while(q != NULL){
-        p = p -> link;
-        q = q -> link;
+    struct node *p = start;
+    int c = 0;
+    while(p != NULL){
         c++;
+        p = p -> link;
     }
-    printf("Node count is %d\n", c);
-    return;
-    }
-
+    return c;
 }
