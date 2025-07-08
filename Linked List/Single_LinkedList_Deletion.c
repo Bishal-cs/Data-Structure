@@ -19,3 +19,40 @@ int DeleteFirst(){
     }
     return x;
 }
+// Delete Last Elements----------
+int DeleteLast(){
+    int x;
+    struct node *p = start, *q = start -> link;
+    if(start == NULL){
+        printf("List is empty\n");
+        return -1;
+    }else{
+        while(q->link != NULL){
+            p = p -> link;
+            q = q -> link;
+        }
+        x = q -> data;
+        p -> link = NULL;
+        free(q);
+    }
+    return x;
+}
+// 2nd way to Delete Last Elements----------
+int DeleteLast(){
+    int x;
+    struct node *p = start, *q = start -> link;
+    if(start == NULL){
+        printf("List is empty\n");
+        return -1;
+    }else{
+        while(p -> link -> link != NULL){
+            p = p -> link;
+        }
+        x = (p -> link) -> data;
+        p -> link = NULL;
+        q = p -> link;
+        p -> link = NULL;
+        free(q);
+    }
+    return x;
+}
