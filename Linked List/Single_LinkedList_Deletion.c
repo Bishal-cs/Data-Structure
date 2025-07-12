@@ -56,3 +56,34 @@ int DeleteLast(){
     }
     return x;
 }
+//  Delete Before value of the given value ----------
+void DeleteBefore(int value){
+    struct node *p = start, *q = start -> link;
+    int x,
+    if(start == NULL){
+        printf("There is No node");
+        x = -1;
+    }
+    else if (start -> link == NULL){
+        printf("There are single node so cant delete!");
+        x = -1;
+    }
+    else{
+        struct node *temp = start;
+        while(q -> link != NULL){
+            if(q -> data == value){
+                x = p -> data; 
+                temp -> link = NULL;
+                p = p -> link;
+                q = q -> link;
+                free(temp);
+            }
+            else{
+                p = p -> link;
+                q = q -> link;
+            }
+        } 
+    }
+    return x;
+    
+}
