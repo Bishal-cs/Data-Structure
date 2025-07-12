@@ -111,3 +111,33 @@ void DeleteAfter(int value){
         } 
     }
 }
+// Delete Specific given value
+void DeleteSpecificValue(int value){
+    if(start == NULL){
+        printf("Start is NULL !");
+    }
+    else{
+        struct node *p = start, *q = start -> link;
+        if(p -> data == value){
+            start = q;
+            p -> link = NULL;
+            free(p);
+        }
+        else{
+            while(q != NULL){
+                if(q -> data == value){
+                    p -> link = q -> link;
+                    q -> link = NULL;
+                    free(q);
+                    break;
+                }
+                p = p -> link;
+                q = q -> link;
+            }
+            if(q == NULL){
+                printf("Data Not found !");
+            }
+            
+        }
+    }
+}
