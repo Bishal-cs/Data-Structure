@@ -69,7 +69,7 @@ void DeleteBefore(int value){
         x = -1;
     }
     else{
-        struct node *temp = start;
+        struct node *temp = p;
         while(q -> link != NULL){
             if(q -> data == value){
                 x = p -> data; 
@@ -85,5 +85,29 @@ void DeleteBefore(int value){
         } 
     }
     return x;
-    
+}
+// delete after given value 
+void DeleteAfter(int value){
+    struct node *p = start, *q = start -> link;
+    if(start == NULL){
+        printf("There is No node");
+    }
+    else if (start -> link == NULL){
+        printf("There are single node so cant delete!");
+    }
+    else{
+        struct node *temp = q;
+        while(q -> link != NULL){
+            if(p -> data == value){.
+                temp -> link = NULL;
+                p = p -> link;
+                q = q -> link;
+                free(temp);
+            }
+            else{
+                p = p -> link;
+                q = q -> link;
+            }
+        } 
+    }
 }
