@@ -13,4 +13,6 @@
 ---
 
  ## Single Linked List:
-   - A single Linked List 
+   - A single Linked List is made up of structure nodes where each nodes have two parts - The first part is DATA and The second part is Link part of the node.
+
+    ![Single linked list node structure](images/image.png)
