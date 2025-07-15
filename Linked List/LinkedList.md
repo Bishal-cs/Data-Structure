@@ -25,8 +25,10 @@
    - 1st node = start.
    - 2nd node = start -> link.
    - 3rd node = start -> link -> link || 2nd -> link.
-
+     
+  ```
   struct node *second = x -> link;
   struct node *third = second -> link / x -> link -> link;
+  ```
 
 ---
