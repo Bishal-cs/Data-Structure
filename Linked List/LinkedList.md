@@ -21,3 +21,11 @@
    The link part of each node points to the next node in the list. But link of last node should be **NULL**
    
 ![Single linked list Examples](Linked_List_Example.png)
+ 
+   - 1st node = start.
+   - 2nd node = start -> link.
+   - 3rd node = start -> link -> link || 2nd -> link.
+  struct node *second = x -> link;
+  struct node *third = second -> link / x -> link -> link;
+
+---
