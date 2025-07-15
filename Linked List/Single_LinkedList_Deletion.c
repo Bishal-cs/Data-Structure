@@ -90,7 +90,7 @@ int DeleteBefore(int value){
     }
     return x;
 }
-// delete after given value 
+// delete after given value ---------
 void DeleteAfter(int value){
     int x = -1;
     struct node *p = start, *q = start -> link, *r = q ->link;
@@ -120,7 +120,7 @@ void DeleteAfter(int value){
         } 
     }
 }
-// Delete Specific given value
+// Delete Specific given value -------------
 void DeleteSpecificValue(int value){
     if(start == NULL){
         printf("Start is NULL !");
@@ -149,4 +149,14 @@ void DeleteSpecificValue(int value){
             
         }
     }
+}
+// List Display Function------------
+void Display_List(){
+    struct node *st = start;
+    printf("Start --->");
+    while(st != NULL){
+        printf("%d --->",st);
+        st = st -> link;
+    }
+    printf("NULL. !");
 }
