@@ -10,11 +10,11 @@ This repository is dedicated to my journey of learning and mastering **Data Stru
 
 ## Table of Contents
 
+- [DSA NOTES](Data_Structure.md)
 - [Introduction](#introduction)
 - [Topics Covered](#topics-covered)
 - [How to Use This Repository](#how-to-use-this-repository)
 - [Personal Notes](#personal-notes)
-- [License](#license)
 
 ---
 
