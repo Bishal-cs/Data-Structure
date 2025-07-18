@@ -3,7 +3,7 @@ struct node {
     struct node * link;
 };
 
-struct node * start = NULL;
+struct node *start = NULL;
 
 // Insert First ----------------------
 void InsertFirst(int value){
@@ -152,7 +152,7 @@ int DeleteFirst(){
     return x;
 }
 // Delete Last Elements----------
-int DeleteLast(){
+int DeleteLast_0(){
     int x;
     struct node *p = start, *q = start -> link;
     if(start == NULL){
@@ -170,7 +170,7 @@ int DeleteLast(){
     return x;
 }
 // 2nd way to Delete Last Elements----------
-int DeleteLast(){
+int DeleteLast_1(){
     int x;
     struct node *p = start, *q = start -> link;
     if(start == NULL){
@@ -295,7 +295,7 @@ void Display_List(){
 // Create New List from start ---------
 void create_List(int n){
     int i, v;
-    struct node *N = (struct node *)malloc(sizeof(struct node *));
+    struct node *N = (struct node *)malloc(sizeof(struct node));
     struct node *p;
     for(i = 1, i<=n, i++){
         printf("Enter value to create number of nodes: ");
@@ -312,3 +312,104 @@ void create_List(int n){
     }
 }
 // Main function of the programs -----
+void main(){
+    int n, key, x;
+    printf("Enter the number of nodes to creat: ");
+    scanf("%d", &n);
+    create_List(n);
+    while(1){
+        printf("\n=== Linked List Menu ===\n");
+        printf("Press 1  ➜ Insert at Beginning (InsertFirst)\n");
+        printf("Press 2  ➜ Insert at End (InsertEnd)\n");
+        printf("Press 3  ➜ Insert at Specific Position (InsertPosition)\n");
+        printf("Press 4  ➜ Insert After a Value (InsertAfter)\n");
+        printf("Press 5  ➜ Insert Before a Value (InsertBefore)\n");
+        printf("Press 6  ➜ Search a Value\n");
+        printf("Press 7  ➜ Count Nodes\n");
+        printf("Press 8  ➜ Delete First Node\n");
+        printf("Press 9  ➜ Delete Last Node\n");
+        printf("Press 10 ➜ Delete Before a Value\n");
+        printf("Press 11 ➜ Delete After a Value\n");
+        printf("Press 12 ➜ Delete Specific Value\n");
+        printf("Press 13 ➜ Display List\n");
+        printf("Press any other key ➜ Exit\n");
+    }
+    scanf("%d", &key);
+    switch(key){
+        case 1:
+            printf("Enter value to insert_first:");
+            scanf("%d", &x);
+            InsertFirst(x);
+            break;
+        case 2:
+            printf("Enter value to InsertEnd:");
+            scanf("%d",&x);
+            InsertEnd(x);
+            break;
+        case 3:
+            int pos;
+            printf("Enter value to insert in position:");
+            scanf("%d", &x);
+            printf("Enter the Position -");
+            scanf("%d", &pos);
+            InsertPosition(x, pos);
+            break;
+        case 4:
+            int AV;
+            printf("Enter value to insert");
+            scanf("%d", &x);
+            printf("Enter the after value to insert after.");
+            scanf("%d", &AV);
+            InsertAfter(x, AV);
+            break;
+        case 5:
+            int BV;
+            printf("Enter value to insert");
+            scanf("%d", &x);
+            printf("Enter the after value to insert after.");
+            scanf("%d", &BV);
+            InsertBefore(x, BV);
+            break;
+        case 6:
+            printf("Enter value to search:");
+            scanf("%d", &x);
+            Search(x);
+            break;
+        case 7:
+            printf("Node count");
+            NodeCount();
+            break;
+        case 8:
+            printf("Delete first Element:");
+            DeleteFirst();
+            break;
+        case 9:
+            printf("Delete Last Element:");
+            DeleteLast_0();
+            break;
+        case 10:
+            printf("Enter value to delete Before Value- ");
+            scanf("%d", &x);
+            DeleteBefore(x);
+            break;
+        case 11:
+            printf("Enter value to delete After Value- ");
+            scanf("%d", &x);
+            DeleteAfter(x);
+            break;
+        case 12:
+            printf("enter value to Delete Specific Value:");
+            scanf("%d", &x);
+            DeleteSpecificValue(x);
+            break;
+        case 13:
+            printf("Your Linked list");
+            Display_List();
+            break;
+        default:
+            printf("Press any other key ➜ Exit\n");
+            scanf("%d", &x);
+            exit(0);
+            break;
+    }
+}
