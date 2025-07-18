@@ -21,7 +21,7 @@ void InsertFirst(int value){
 }
 // Insert Last -----------------------
 void InsertEnd(int value){
-    struct node * temp = (struct temp *)malloc(sizeof(struct node));
+    struct node * temp = (struct node *)malloc(sizeof(struct node));
     temp->data = value;
     if (start == NULL) {
         temp->link = NULL;
@@ -40,7 +40,7 @@ void InsertEnd(int value){
 }
 // Insert Position -------------------
 void InsertPosition(int value, int position){
-    struct node * temp = (struct temp *)malloc(sizeof(struct node));
+    struct node * temp = (struct node *)malloc(sizeof(struct node));
     temp->data = value;
     if (start == NULL){
         temp -> link = NULL;
@@ -96,7 +96,7 @@ void InsertBefore(int value, int beforeValue){
         printf("Value %d not found in the list.\n", beforeValue);
     }else{
         while(q != NULL){
-            if(q -> data = beforeValue){
+            if(q -> data == beforeValue){
                 p -> link = temp;
                 temp -> link = q;
             }else{
@@ -312,7 +312,7 @@ void create_List(int n){
     }
 }
 // Main function of the programs -----
-void main(){
+int main(){
     int n, key, x;
     printf("Enter the number of nodes to creat: ");
     scanf("%d", &n);
