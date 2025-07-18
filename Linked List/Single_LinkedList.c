@@ -293,3 +293,22 @@ void Display_List(){
     printf("NULL. !");
 }
 // Create New List from start ---------
+void create_List(int n){
+    int i, v;
+    struct node *N = (struct node *)malloc(sizeof(struct node *));
+    struct node *p;
+    for(i = 1, i<=n, i++){
+        printf("Enter value to create number of nodes: ");
+        scanf("%d", &v);
+        N -> data = v;
+        N -> link = NULL;
+        if(start == NULL){
+            start = N;
+        }
+        else{
+            p -> link = N;
+        }
+        p = N;
+    }
+}
+// Main function of the programs -----
