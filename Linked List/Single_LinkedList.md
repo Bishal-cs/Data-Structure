@@ -1,5 +1,6 @@
 # Single Linked List:
    - A single Linked List is made up of structure nodes where each nodes have two parts - The first part is DATA and The second part is Link part of the node.
+---
 
 ![Single linked list node structure](Single_Linked_list_structure.png)
 
@@ -13,9 +14,9 @@
    - 3rd node = start -> link -> link || 2nd -> link.
      
 ```
-   struct node {
-      int data;
-      struct node * link;
-   };
-   struct node *start = NULL;
+struct node {
+   int data;
+   struct node * link;
+};
+struct node *start = NULL;
 ```
