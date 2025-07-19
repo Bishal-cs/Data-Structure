@@ -225,7 +225,6 @@ int DeleteBefore(int value){
 }
 // delete after given value ---------
 void DeleteAfter(int value){
-    int x = -1;
     struct node *p = start, *q = start -> link, *r = q ->link;
     if(start == NULL || start -> link == NULL){
         printf("There is No node");
@@ -234,7 +233,6 @@ void DeleteAfter(int value){
         while(r != NULL){
             if(p -> data == value){
                 p -> link = r;
-                x = q -> data;
                 q -> link = NULL;
                 free(q);
                 break;
