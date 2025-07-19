@@ -1,5 +1,7 @@
 # Doubly Linked List:
 
+---
+
 ```
 struct node{
     int data;
