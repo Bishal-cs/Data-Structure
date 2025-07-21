@@ -294,18 +294,18 @@ void Display_List(){
 // Create New List from start ---------
 void create_List(int n){
     int i, v;
-    struct node *N = (struct node *)malloc(sizeof(struct node));
-    struct node *p;
+    struct node *N, *p = NULL;
     for(i = 1; i<=n; i++){
         printf("Enter values :: ");
         scanf("%d", &v);
-        N -> data = v;
-        N -> link = NULL;
+        N = (struct node *)malloc(sizeof(struct node)); // Allocate inside loop
+        N->data = v;
+        N->link = NULL;
         if(start == NULL){
             start = N;
         }
         else{
-            p -> link = N;
+            p->link = N;
         }
         p = N;
     }
