@@ -7,15 +7,14 @@ struct node {
 };
 struct node *start = NULL;
 
-//Delete Before element---
+//Delete Before element----
 void Delete_Before(int value){
     if(start == NULL || start -> right == NULL || start -> data == value){
-        printf("Delete Not possiable!");
+        printf("Delete Not possible!\n");
     }
     else{
         struct node *curr = start->right;
         while(curr -> right != NULL){
-            curr = curr -> right;
             if(curr -> data == value){
                 struct node *p = curr -> left;
                 if(p -> left == NULL){
@@ -31,10 +30,32 @@ void Delete_Before(int value){
                     free(p);
                 }
            }
+            curr = curr -> right;
         }
     }
 }
-
-int Delete_After(int value){
-
+// Delete After element----
+void Delete_After(int value){
+    if(start == NULL || start -> right == NULL){
+        printf("Delete Not possible!\n");
+    }
+    else(
+        struct node *curr = start;
+        while(curr -> right != NULL){
+            if(curr -> data == value){
+                struct node *N = curr -> right;
+                if(N == NULL){
+                    printf("%d is the last node so cant delete!",curr);
+                }
+                else{
+                    curr -> right = N -> right;
+                    N -> right -> left = curr;
+                    N -> right = NULL;
+                    N -> left = NULL;
+                    free(N);
+                }
+            }
+            curr = curr -> right;
+        }
+    )
 }
