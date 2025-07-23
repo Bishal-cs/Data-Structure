@@ -12,7 +12,7 @@ void Insert_First(int value){
     struct node *temp = (struct node *) malloc (sizeof(struct node));
     temp -> data = value;
     temp -> left = NULL;
-    temp -> right = start
+    temp -> right = start;
     if(start == NULL){
         start = temp;
     }
@@ -44,16 +44,27 @@ void Insert_END(int value){
 // Insert After element----
 void Insert_After(int value, int AfterValue){
     struct node *temp = (struct node *)malloc(sizeof(struct node));
-    temp -> data = AfterValue;
+    temp -> data = value;
     if(start == NULL){
-        printf("Data Cant Insert!");
+        printf("List is empty. Cannot insert after %d\n", AfterValue);
+        return;
     }
     else{
-        struct node *P = start;
+        struct node *p = start;
         while(p != NULL){
-            
+            if(p -> data == AfterValue){
+                temp->right = p->right;
+                if(p -> right != NULL){
+                    p -> right -> left = temp;
+                }
+                p -> right = temp;
+                temp -> left = p;
+                return;        
+            }
+            p = p -> right;
         }
-        P = P -> right;
+
+        printf("Data not found %d", AfterValue);
     }
 }
 

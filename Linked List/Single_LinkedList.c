@@ -397,7 +397,7 @@ int main(){
 	            DeleteSpecificValue(x);
 	            break;
 	        case 13:
-	            printf("Your Linked list");
+	            printf("Your Linked list:\n");
 	            Display_List();
 	            break;
 	        default:
