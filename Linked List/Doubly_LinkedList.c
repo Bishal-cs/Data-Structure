@@ -22,7 +22,24 @@ void Insert_First(int value){
     }
 }
 
-
+// Insert End elements---
+void Insert_END(int value){
+    struct node *temp = (struct node *) malloc (sizeof(struct node));
+    temp -> data = value;
+    temp -> right = NULL;
+    if(start == NULL){
+        temp -> left = NULL;
+        start = temp;                                          
+    }
+    else{
+        struct node *curr = start;
+        while(curr -> right != NULL){
+            curr = curr -> right;
+        }
+        curr -> right = temp;
+        temp -> left = curr;
+    }
+}
 //Delete Before element----
 void Delete_Before(int value){
     if(start == NULL || start -> right == NULL || start -> data == value){
