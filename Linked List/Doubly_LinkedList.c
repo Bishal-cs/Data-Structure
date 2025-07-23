@@ -7,6 +7,22 @@ struct node {
 };
 struct node *start = NULL;
 
+// Insert First elements using doubly linked list----
+void Insert_First(int value){
+    struct node *temp = (struct node *) malloc (sizeof(struct node));
+    temp -> data = value;
+    temp -> left = NULL;
+    temp -> right = start
+    if(start == NULL){
+        start = temp;
+    }
+    else{
+        start -> left = temp;
+        start = temp;
+    }
+}
+
+
 //Delete Before element----
 void Delete_Before(int value){
     if(start == NULL || start -> right == NULL || start -> data == value){
