@@ -12,8 +12,6 @@ void InsertFirst(int value){
     temp->data = value;
     if(start == NULL) {
         temp->link = NULL;
-    }else if(start != NULL) {
-        temp->link = start;
         start = temp;
     }else {
         temp->link = start;
@@ -106,7 +104,7 @@ void InsertBefore(int value, int beforeValue){
             }
         }if(start -> data == beforeValue){
             temp -> link = start;
-            temp -> link = start;
+            temp = start;
         }else{
             printf("Value %d not found in the list.\n", beforeValue);
         }
@@ -373,8 +371,7 @@ int main(){
 	            Search(x);
 	            break;
 	        case 7:
-	            printf("Node count");
-	            NodeCount();
+	            printf("Node count: %d\n", NodeCount());
 	            break;
 	        case 8:
 	            printf("Delete first Element:");
@@ -406,6 +403,7 @@ int main(){
 	        default:
 	            printf("Press any other key Exit\n");
 	            scanf("%d", &x);
+                printf("Exiting...\n");
 	            exit(0);
 	            break;
 	    }

@@ -40,6 +40,23 @@ void Insert_END(int value){
         temp -> left = curr;
     }
 }
+
+// Insert After element----
+void Insert_After(int value, int AfterValue){
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    temp -> data = AfterValue;
+    if(start == NULL){
+        printf("Data Cant Insert!");
+    }
+    else{
+        struct node *P = start;
+        while(p != NULL){
+            
+        }
+        P = P -> right;
+    }
+}
+
 //Delete Before element----
 void Delete_Before(int value){
     if(start == NULL || start -> right == NULL || start -> data == value){
