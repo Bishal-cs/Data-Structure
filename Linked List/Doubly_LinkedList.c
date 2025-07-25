@@ -63,12 +63,11 @@ void Insert_After(int value, int AfterValue){
             }
             p = p -> right;
         }
-
         printf("Data not found %d", AfterValue);
     }
 }
 
-//Delete Before element----
+/*//Delete Before element----
 void Delete_Before(int value){
     if(start == NULL || start -> right == NULL || start -> data == value){
         printf("Delete Not possible!\n");
@@ -94,29 +93,72 @@ void Delete_Before(int value){
             curr = curr -> right;
         }
     }
-}
+} This need to modify.*/
+
 // Delete After element----
-void Delete_After(int value){
+/* This method i created other in the note book.*/
+int Delete_After(int value){
+    int x = -1;
     if(start == NULL || start -> right == NULL){
         printf("Delete Not possible!\n");
     }
-    else(
+    else{
         struct node *curr = start;
         while(curr -> right != NULL){
             if(curr -> data == value){
                 struct node *N = curr -> right;
                 if(N == NULL){
-                    printf("%d is the last node so cant delete!",curr);
+                    if(curr -> data == value){
+                        printf("Data Found but not delete!");
+                    }
+                    else{
+                        printf("Data Not Delete!");
+                    }
                 }
                 else{
                     curr -> right = N -> right;
-                    N -> right -> left = curr;
-                    N -> right = NULL;
-                    N -> left = NULL;
+                    if(N -> right != NULL){
+                        N -> right -> left = curr;
+                    }
+                    N -> right = N -> left = NULL;
+                    x = N -> data;
                     free(N);
                 }
             }
             curr = curr -> right;
         }
-    )
+    }
+    return x;
+}
+
+//Delete Match element or node ---
+void Delete_Match_value(int value){
+    struct node *p = start;
+    if(start == NULL){
+        printf("Delete not possible!");
+    }
+    else if(start -> data == value){
+        start = start -> right;
+        if(start != NULL){
+            start -> left = NULL;
+        }
+        p -> right = NULL;
+        free(p);
+    }
+    else{
+        while(p != NULL){
+            if(p -> data == value){
+                p -> left -> right = p -> right;
+                if(p -> right != NULL){
+                    p -> right -> left = p -> left;
+                }
+                p -> left = p -> right = NULL;
+                free(p);
+            }
+            p = p -> right;
+        }
+        if(p == NULL){
+            printf("Data Not Found!");
+        }
+    }
 }
