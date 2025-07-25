@@ -66,8 +66,14 @@ void Insert_After(int value, int AfterValue){
         printf("Data not found %d", AfterValue);
     }
 }
+// Insert Before Node ---
+// Insert Position Node ---
+// Node Count ---
+// Search Node ---
+// Delete First Node ---
+// Delete Last Node ---
 
-/*//Delete Before element----
+/*// Delete Before element----
 void Delete_Before(int value){
     if(start == NULL || start -> right == NULL || start -> data == value){
         printf("Delete Not possible!\n");
