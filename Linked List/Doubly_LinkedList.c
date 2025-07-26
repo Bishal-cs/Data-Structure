@@ -93,6 +93,7 @@ void Insert_Before(int value, int BV){
         printf("Data- %d not found!", BV);
     }
 }
+
 // Insert Position Node ---
 // Node Count ---
 int Node_Count(){
@@ -105,6 +106,18 @@ int Node_Count(){
     return c;
 }
 
+// Search Node ---
+int Search_Value(int value){
+    int c = 0;
+    struct node *st = start;
+    while(st != NULL){
+        if(st -> data == value){
+            return c;
+        }
+        st = st -> right;
+    }
+    return -1;
+}
 
 // Delete First Node ---
 // Delete Last Node ---
