@@ -150,6 +150,22 @@ int Search_Value(int value){
 }
 
 // Delete First Node ---
+void Delete_First(){
+    int x;
+    if(start == NULL){
+        printf("Doubly Linked List Empty!");
+    }
+    else{
+        struct node *p = start;
+        x = start -> data;
+        start = start -> right;
+        if(start != NULL){
+            start -> left = NULL;
+            p -> right = NULL;
+            free(p);
+        }
+    }
+}
 // Delete Last Node ---
 
 /*// Delete Before element----
