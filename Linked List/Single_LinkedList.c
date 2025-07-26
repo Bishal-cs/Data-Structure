@@ -316,7 +316,7 @@ int main(){
     scanf("%d", &n);
     create_List(n);
     while(1){
-        printf("\n=== Linked List Menu ===\n");
+        printf("\n=== Single Linked List Menu ===\n");
         printf("Press 1  Insert at Beginning (InsertFirst)\n");
         printf("Press 2  Insert at End (InsertEnd)\n");
         printf("Press 3  Insert at Specific Position (InsertPosition)\n");

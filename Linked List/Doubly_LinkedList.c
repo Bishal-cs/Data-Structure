@@ -67,6 +67,13 @@ void Insert_After(int value, int AfterValue){
     }
 }
 // Insert Before Node ---
+void Insert_Before(int value, int BV){
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    temp -> data = value;
+    if(start == value){
+        printf("Data not delete!");
+    }
+}
 // Insert Position Node ---
 // Node Count ---
 // Search Node ---
@@ -165,6 +172,32 @@ void Delete_Match_value(int value){
         }
         if(p == NULL){
             printf("Data Not Found!");
+        }
+    }
+}
+// Create Node in Doubly linked list ---
+int Create_Doubly_List(int num){
+    int values;
+    for(int i=1; i<=num; i++){
+        printf("Enter values :: ");
+        scanf("%d", &values);
+    }
+}
+// Main function of the Doubly Linked List ---
+int main(){
+    int key, n;
+    printf("Enter the number of nodes to creat: ");
+    scanf("%d", &n);
+    Create_Doubly_List(n)
+    while(1){
+        // Print the Functions names in doubly linked list. 
+        printf("\n=== Doubly Linked List Menu ===\n");
+
+        // start the calling of the functions and run this with switch case:
+        scanf("%d", &key);
+        switch(key){
+            case 1:
+                printf("dsjngjsr");
         }
     }
 }
