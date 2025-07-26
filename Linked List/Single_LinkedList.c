@@ -403,7 +403,7 @@ int main(){
 	        default:
 	            printf("Press any other key Exit\n");
 	            scanf("%d", &x);
-                printf("Exiting...\n");
+	            printf("Exiting...\n");
 	            exit(0);
 	            break;
 	    }
