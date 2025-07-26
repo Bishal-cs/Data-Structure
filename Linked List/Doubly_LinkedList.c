@@ -166,7 +166,28 @@ void Delete_First(){
         }
     }
 }
+
 // Delete Last Node ---
+void Delete_Last(){
+    int x;
+    struct node *p = start;
+    if(start == NULL){
+        printf("Doubly Linked List Empty!");
+    }
+    else if(start -> right == NULL){
+        x = start -> data;
+        start = start -> right;
+        free(p);
+    }
+    else{
+        while(p -> right != NULL){
+            p = p -> right;
+        }
+        p -> left -> right = NULL;
+        p -> left = NULL;
+        free(p);
+    }
+}
 
 /*// Delete Before element----
 void Delete_Before(int value){
