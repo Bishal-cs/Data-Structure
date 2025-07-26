@@ -95,6 +95,36 @@ void Insert_Before(int value, int BV){
 }
 
 // Insert Position Node ---
+void Insert_Position_Node(int value, int pos){
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    temp -> data = value;
+    struct node *p = start;
+    if(start == NULL){
+        printf("Doubly Linked List Empty!");
+        return;
+    }
+    else if(pos == 1){
+        temp -> right = start;
+        temp -> left = NULL;
+        start -> left = temp;
+        start = temp;
+    }
+    else{
+        for(int i=1;i<=(pos-2) && p!=NULL; i++)
+            p = p -> right;
+        if(p == NULL){
+            printf("Position Not found");
+        }
+        else{
+            struct node *q = p -> right;
+            temp -> right = q;
+            temp -> left = p;
+            p -> right = temp;
+            if(q != NULL)
+                q -> left = temp;
+        }
+    }
+}
 // Node Count ---
 int Node_Count(){
     struct node *st = start;
