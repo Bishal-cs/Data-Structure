@@ -73,6 +73,25 @@ void Insert_Before(int value, int BV){
     if(start == value){
         printf("Data not delete!");
     }
+    else{
+        struct node *p = start;
+        while(p != NULL){
+            if(p -> data == BV){
+                struct node *q = p -> left;
+                temp -> right = p;
+                temp -> left = q;
+                p -> left = temp;
+                if(q == NULL){
+                    start = temp;
+                }
+                else{
+                    q -> right = temp;
+                }
+            }
+            p = p -> right;
+        }
+        printf("Data- %d not found!", BV);
+    }
 }
 // Insert Position Node ---
 // Node Count ---
