@@ -95,7 +95,17 @@ void Insert_Before(int value, int BV){
 }
 // Insert Position Node ---
 // Node Count ---
-// Search Node ---
+int Node_Count(){
+    struct node *st = start;
+    int c = 0;
+    while(st != NULL){
+        c++;
+        st = st -> right;
+    }
+    return c;
+}
+
+
 // Delete First Node ---
 // Delete Last Node ---
 
