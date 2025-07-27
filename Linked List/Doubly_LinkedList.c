@@ -296,6 +296,26 @@ void Display(){
     printf("NULL.\n")
 }
 
+// Create Node in Doubly linked list ---
+void Create_Doubly_List(int num){
+    int values;
+    struct node *N, *p = NULL;
+    for(int i=1; i<=num; i++){
+        printf("Enter values :: ");
+        scanf("%d", &values);
+        N = (struct node *)malloc(sizeof(struct node));
+        N -> data = values;
+        N -> left = N -> right = NULL;
+        if(start == NULL){
+            start = N;
+        }
+        else{
+            p -> right = N;
+            N -> left = p;
+        }
+        p = N;
+    }
+}
 
 // Main function of the Doubly Linked List ---
 int main(){
