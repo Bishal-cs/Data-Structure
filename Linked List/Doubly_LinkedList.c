@@ -290,10 +290,10 @@ void Display(){
     struct node *st = start;
     printf("Start <---->");
     while(st != NULL){
-        printf("%d <---->",st -> data);
+        printf("%d <---->",st->data);
         st = st -> right;
     }
-    printf("NULL.\n")
+    printf("NULL.\n");
 }
 
 // Create Node in Doubly linked list ---
@@ -322,16 +322,18 @@ int main(){
     int key, n;
     printf("Enter the number of nodes to creat: ");
     scanf("%d", &n);
-    Create_Doubly_List(n)
+    Create_Doubly_List(n);
     while(1){
         // Print the Functions names in doubly linked list. 
         printf("\n=== Doubly Linked List Menu ===\n");
-
+        printf("Press 1 Display List\n");
         // start the calling of the functions and run this with switch case:
-        scanf("%d", &key);
+        scanf("%d",&key);
         switch(key){
             case 1:
-                printf("dsjngjsr");
+                printf("Display the Doubly Linked List.");
+                Display();
+                break;
         }
     }
 }
