@@ -284,14 +284,19 @@ void Delete_Match_value(int value){
         }
     }
 }
-// Create Node in Doubly linked list ---
-int Create_Doubly_List(int num){
-    int values;
-    for(int i=1; i<=num; i++){
-        printf("Enter values :: ");
-        scanf("%d", &values);
+
+// Display Doubly link list ---
+void Display(){
+    struct node *st = start;
+    printf("Start <---->");
+    while(st != NULL){
+        printf("%d <---->",st -> data);
+        st = st -> right;
     }
+    printf("NULL.\n")
 }
+
+
 // Main function of the Doubly Linked List ---
 int main(){
     int key, n;
