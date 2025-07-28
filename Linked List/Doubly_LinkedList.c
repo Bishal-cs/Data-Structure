@@ -87,11 +87,12 @@ void Insert_Before(int value, int BV){
                 else{
                     q -> right = temp;
                 }
+                return;
             }
             p = p -> right;
         }
-        printf("Data- %d not found!", BV);
     }
+    printf("Data- %d not found!", BV);
 }
 
 // Insert Position Node ---
@@ -320,19 +321,70 @@ void Create_Doubly_List(int num){
 // Main function of the Doubly Linked List ---
 int main(){
     int key, n;
+    int arg1, arg2;
     printf("Enter the number of nodes to creat: ");
     scanf("%d", &n);
     Create_Doubly_List(n);
     while(1){
         // Print the Functions names in doubly linked list. 
         printf("\n=== Doubly Linked List Menu ===\n");
-        printf("Press 1 Display List\n");
+        printf("Press 1  Insert at Beginning (Insert_First)\n");
+        printf("Press 2  Insert at End (Insert_END)\n");
+        printf("Press 3  Insert After a Value (Insert_After)\n");
+        printf("Press 4  Insert Before a Value (Insert_Before)\n");
+        printf("Press 5  Insert at Position (Insert_Position_Node)\n");
+        printf("Press 6  Count Nodes (Node_Count)\n");
+        printf("Press 7  Search a Value (Search_Value)\n");
+        printf("Press 8  Delete First Node (Delete_First)\n");
+        printf("Press 9 Delete Last Node (Delete_Last)\n");
+        printf("Press 10 Delete Before a Value (Delete_Before)\n");
+        printf("Press 11 Delete After a Value (Delete_After)\n");
+        printf("Press 12 Delete Specific Value (Delete_Match_value)\n");
+        printf("Press 13 Display List (Display)\n");
+        printf("Press any other key to Exit\n");
+
         // start the calling of the functions and run this with switch case:
         scanf("%d",&key);
         switch(key){
             case 1:
-                printf("Display the Doubly Linked List.");
+                printf("Enter Number to Insert at Beginning ->");
+                scanf("%d", &arg1);
+                Insert_First(arg1);
+                break;
+            case 2:
+                printf("Enter Number to Insert at End ->");   
+                scanf("%d", &arg1);
+                Insert_END(arg1);
+                break;
+            case 3:
+                printf("Enter Number to Insert After Value ->");
+                scanf("%d", &arg1);
+                printf("Enter Value to Insert After ->");
+                scanf("%d", &arg2);
+                Insert_After(arg1, arg2);
+                break;
+            case 4:
+                printf("Enter Number to Insert Before Value ->");
+                scanf("%d", &arg2);
+                printf("Enter Value to Insert Before ->");
+                scanf("%d", &arg1);
+                Insert_Before(arg2, arg1);
+                break;
+            case 5:
+                printf("Enter Value to Insert at Position ->");
+                scanf("%d", &arg1);
+                printf("Enter Position to Insert ->");
+                scanf("%d", &arg2);
+                Insert_Position_Node(arg1, arg2);
+                break;
+            case 13:
+                printf("Displaying the all list ->\n");
                 Display();
+                break;
+            default:
+                printf("Press any other key Exit\n");
+                printf("Exiting...\n");
+                exit(0);
                 break;
         }
     }
