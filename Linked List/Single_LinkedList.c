@@ -401,7 +401,6 @@ int main(){
 	            Display_List();
 	            break;
 	        default:
-	            printf("Press any other key Exit\n");
 	            printf("Exiting...\n");
 	            exit(0);
 	            break;

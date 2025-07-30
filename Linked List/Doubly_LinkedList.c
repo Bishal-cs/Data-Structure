@@ -190,33 +190,40 @@ void Delete_Last(){
     }
 }
 
-/*// Delete Before element----
-void Delete_Before(int value){
-    if(start == NULL || start -> right == NULL || start -> data == value){
+// Delete Before element----
+int Delete_Before(int value){
+    int x = -1;
+    if(start == NULL || start -> data == value){
         printf("Delete Not possible!\n");
     }
     else{
-        struct node *curr = start->right;
-        while(curr -> right != NULL){
-            if(curr -> data == value){
-                struct node *p = curr -> left;
-                if(p -> left == NULL){
-                    p -> right = NULL;
-                    curr -> left = NULL;
-                    free(p);
+        struct node *curr = start;
+        if(start -> right -> data == value){
+            start = curr -> right;
+            curr -> right = NULL;
+            start -> left = NULL;
+            x = curr -> data;
+            free(curr);
+        }
+        else{
+            while(curr != NULL){
+                if(curr -> data == value){
+                    struct node *q = curr -> left, *r = q -> left;
+                    r -> right = curr;
+                    curr -> left = r;
+                    q -> left = q -> right = NULL;
+                    x = q -> data;
+                    free(q);
                 }
-                else{
-                    p -> left -> right = curr;
-                    curr -> left = p -> left;
-                    p -> right = NULL;
-                    p -> left = NULL;
-                    free(p);
-                }
-           }
-            curr = curr -> right;
+                curr = curr -> right;
+            }
+            if(curr == NULL){
+                printf("Data Not Found!");
+            }
         }
     }
-} This need to modify.*/
+    return x;
+}
 
 // Delete After element----
 /* This method i created other in the note book.*/
@@ -410,6 +417,19 @@ int main(){
                 scanf("%d", &arg2);
                 Insert_Position_Node(arg1, arg2);
                 break;
+            case 6:
+	            printf("Node count: %d\n", Node_Count());
+                break;
+            case 7:
+                printf("Enter any value to search from your node ::");
+                scanf("%d", &arg1);
+                Search_Value(arg1);
+                break;
+            case 10:
+                printf("Enter Value to delete before value ->");
+                scanf("%d", &arg1);
+                Delete_Before(arg1);
+                break;
             case 13:
                 printf("Enter position value to delete ->");
                 scanf("%d", &arg1);
@@ -420,7 +440,6 @@ int main(){
                 Display();
                 break;
             default:
-                printf("Press any other key Exit\n");
                 printf("Exiting...\n");
                 exit(0);
                 break;
