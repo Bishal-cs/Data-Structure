@@ -16,6 +16,8 @@ The process of the providing only the essentials and hiding the details is known
 
 ## Types of Linked List:
  1. Single Linked List. 
+ - [Click to Jump in Documentation.](./Linked%20List/Single_LinkedList.md)
+ - [Click to Jump in Programs.](./Linked%20List/Single_LinkedList.c)
  2. Doubly Linked List.
  3. Circular Linked List.
 
