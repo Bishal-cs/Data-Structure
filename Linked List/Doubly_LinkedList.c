@@ -286,6 +286,38 @@ void Delete_Match_value(int value){
     }
 }
 
+// Delete Position Value ---
+int Delete_Position(int pos){
+    int x = -1;
+    if(start == NULL){
+        printf("Start have no data.");
+    }
+    else if(pos == 1){
+        struct node *p = start;
+        start = start -> right;
+        x = p -> data;
+        free(p);
+    }
+    else{
+        struct node *p = start;
+        for(int i = 1; i < pos && p!= NULL; i++){
+            p = p -> right;
+        }
+        if(p == NULL){
+            printf("%d Position not found.",pos);
+        }
+        else{
+            p -> left -> right = p -> right;
+            if(p -> right != NULL)
+                p -> right -> left = p -> left;
+            p -> left = NULL;
+            x = p -> data;
+            free(p);
+        }
+    }
+    return x;
+}
+
 // Display Doubly link list ---
 void Display(){
     struct node *st = start;
@@ -340,7 +372,8 @@ int main(){
         printf("Press 10 Delete Before a Value (Delete_Before)\n");
         printf("Press 11 Delete After a Value (Delete_After)\n");
         printf("Press 12 Delete Specific Value (Delete_Match_value)\n");
-        printf("Press 13 Display List (Display)\n");
+        printf("Press 13 Delete Position Value(Delete_Position)\n");
+        printf("Press 14 Display List (Display)\n");
         printf("Press any other key to Exit\n");
 
         // start the calling of the functions and run this with switch case:
@@ -378,6 +411,11 @@ int main(){
                 Insert_Position_Node(arg1, arg2);
                 break;
             case 13:
+                printf("Enter position value to delete ->");
+                scanf("%d", &arg1);
+                Delete_Position(arg1);
+                break;
+            case 14:
                 printf("Displaying the all list ->\n");
                 Display();
                 break;
