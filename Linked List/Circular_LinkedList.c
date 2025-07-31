@@ -34,4 +34,14 @@ struct node *Display(struct node *Last){
     }
     return Last;
 }
-// Count in Circular Linked List
+// Count Node in Circular Linked List
+struct node *Count_Nodes(struct node *Last){
+    struct node *st = Last -> Link;
+    int c = 0;
+    while(st != Last){
+        c++;
+        st = st -> link;
+    }
+    printf("The number of Node is -> %d", c);
+    return Last;
+}
