@@ -17,8 +17,25 @@ struct node *Insert_First(struct node *Last, int value){
         temp -> Link = Last -> Link;
         Last -> Link = temp;
     }
+    printf("%d The number Successfull Insert At First Position.", value)
     return Last;
 } 
+// Insert Last in Circular Linked List ---
+struct node *Insert_Last(struct node *Last, int value){
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    temp -> data = value;
+    if(Last == NULL){
+        temp -> Link = temp;
+        Last = temp;
+    }
+    else{
+        temp -> Link = Last -> Link;
+        Last -> Link = temp;
+        Last = temp;
+    }
+    printf("%d The number Successfull Insert At Last Position.", value)
+    return Last;
+}
 // Display in Circular Linked List ---
 struct node *Display(struct node *Last){
     struct node *st = Last -> Link;
@@ -34,7 +51,7 @@ struct node *Display(struct node *Last){
     }
     return Last;
 }
-// Count Node in Circular Linked List
+// Count Node in Circular Linked List ---
 struct node *Count_Nodes(struct node *Last){
     struct node *st = Last -> Link;
     int c = 0;
