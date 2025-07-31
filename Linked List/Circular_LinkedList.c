@@ -19,3 +19,19 @@ struct node *Insert_First(struct node *Last, int value){
     }
     return Last;
 } 
+// Display in Circular Linked List ---
+struct node *Display(struct node *Last){
+    struct node *st = Last -> Link;
+    if(Last == NULL){
+        printf("NULL <--- Last\n");
+    }
+    else{
+        while(st != Last){
+            printf("%d ---> ", st -> data);
+            st = st -> link;
+        }
+        printf("Last\n");
+    }
+    return Last;
+}
+// Count in Circular Linked List

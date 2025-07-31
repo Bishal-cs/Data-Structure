@@ -328,9 +328,9 @@ int Delete_Position(int pos){
 // Display Doubly link list ---
 void Display(){
     struct node *st = start;
-    printf("Start <---->");
+    printf("NULL <--- Start <---->");
     while(st != NULL){
-        printf("%d <---->",st->data);
+        printf("%d <----> ",st->data);
         st = st -> right;
     }
     printf("NULL.\n");
