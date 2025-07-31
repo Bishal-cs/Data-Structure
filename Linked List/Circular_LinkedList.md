@@ -3,5 +3,5 @@
 This problem can be resolved by slidely changing the structure of single linked list. In single list link part last node is **NULL**. If we utilize the link part of last node and point to the first node we can have some advantages. The structure thus fromed is called as **Circular Linked List**.
 
 
-
+## Operations Of Circular Linked List -
 - [Click to Jump in Programs.](Circular_LinkedList.c)
