@@ -5,7 +5,11 @@ Generally any problem that has to be solved by the computer involves the use of 
 - **Abstract Data Type** is a mathematical model or consept that depends a data logically. It specifies a set of data and collection of operations that can be performed on the data. The defenation of **Abstract Data Type**(ADT) only mention what type of operations can be performed but not how the operations can be performed. It is called Abstract cause its gives implementation implemeted view.
 The process of the providing only the essentials and hiding the details is known as abstruction.
 
-- **Examples:** Stack ADT, Queue ADT, Linked List ADT.
+   - **Examples:** Stack ADT, Queue ADT, Linked List ADT.
+
+- **Data Structure** is a programming consept that is used to implemented and abstruct data-type. It is the phyisical implementation of **ADT**.
+All operations specified in ADT are implemented through the functions.
+ADT is a logical view of data and operations to manupulate of data. Data Structure actule representation of data and algorithms to manupulate the data.
 
 # Linked List :
  - List is a collection of simmilar type of elements. There two ways of maintaining a list in memory.
