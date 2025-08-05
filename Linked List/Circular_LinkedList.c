@@ -78,3 +78,19 @@ struct node *Search_Node(struct node *Last, int value){
     }
     return Last;
 }
+// Delete First in Circular Linked List ---
+struct node *Delete_First(struct node *Last){
+    int Data = 0;
+    if(Last == NULL || Last -> Link = Last){
+        printf("Delete Not possible.");
+    }
+    else{
+        struct node *p = Last -> Link, q = p -> Link;
+        Last -> Link = q;
+        p -> Link = NULL;
+        Data = p -> data;
+        free(p)
+        printf("Success Fully Deleted First Element the data is %d", Data);
+    }
+    return Last;
+}
