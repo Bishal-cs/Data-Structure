@@ -113,4 +113,33 @@ struct node *Delete_last(struct node *Last){
         free(q);
         printf("Success Fully Deleted Last Element the data is %d", Data);
     }
+    return Last;
+}
+// Insert Postition in Circular Linked List ---
+struct node *Insert_position(struct node *Last, int value, int position){
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    temp -> data = value;
+    if(Last == NULL){
+        temp -> Link = NULL;
+        Last = temp;
+        Last -> link = Last;
+    }
+    else{
+        struct node *p = Last -> Link;
+        int i = 1;
+        for(i =1; i <position -1; i++){
+            if(p != Last){
+                p = p -> Link;
+            }
+            else
+                break;
+        }if (i < (position - 2)){
+            printf("Position is out of range\n");
+        }else{
+            struct node *q = p -> Link;
+            temp -> Link = q;
+            p -> link = temp;
+        }
+    }
+    return Last;
 }
