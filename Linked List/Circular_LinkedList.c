@@ -94,3 +94,23 @@ struct node *Delete_First(struct node *Last){
     }
     return Last;
 }
+// Delete Last in Circular Linked List ---
+struct node *Delete_last(struct node *Last){
+    int Data = 0;
+    if(Last == NULL || Last -> Link = Last){
+        printf("Delete Not possible.");
+    }
+    else{
+        struct node *p = Last;
+        while(p -> Link != Last){
+            p = p -> Link;
+        }
+        struct node *q = p -> Link;
+        Last = Last -> Link;
+        p -> Link = Last;
+        q -> Link = NULL;
+        Data = q -> data;
+        free(q);
+        printf("Success Fully Deleted Last Element the data is %d", Data);
+    }
+}
