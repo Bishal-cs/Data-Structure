@@ -9,7 +9,6 @@ struct node{
     int data;
     struct node *link;
 };
-struct node *Start = NULL;
 ```
 ## Operations Of Circular Linked List -
 - [Click to Jump in Programs.](Circular_LinkedList.c)
