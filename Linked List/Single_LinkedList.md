@@ -2,7 +2,7 @@
    - A single Linked List is made up of structure nodes where each nodes have two parts - The first part is DATA and The second part is Link part of the node.
 ---
 
-![Single linked list node structure](Single_Linked_list_structure.png)
+![Single linked list node structure](/Linked%20List/images/Single_Linked_list_structure.png)
 ---
 
    The begning of the list is marked by a special name - **Start The start pointer points to the first node of the list.**
@@ -10,7 +10,7 @@
    
 ---
 
-![Single linked list Examples](Single_Linked_List_Example.png)
+![Single linked list Examples](/Linked%20List/images/Single_Linked_List_Example.png)
 ---
    - 1st node = start.
    - 2nd node = start -> link.
