@@ -3,7 +3,7 @@
 This problem can be resolved by slidely changing the structure of single linked list. In single list link part last node is **NULL**. If we utilize the link part of last node and point to the first node we can have some advantages. The structure thus fromed is called as **Circular Linked List**.
 
 --- 
-![Circular_Linked_list_structure](Circular_Linked_List_structure.png)
+![Circular_Linked_list_structure](Circular_Linked_List_Structure.png)
 ```
 struct node{
     int data;
