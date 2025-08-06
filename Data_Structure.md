@@ -30,5 +30,8 @@ ADT is a logical view of data and operations to manupulate of data. Data Structu
  3. Circular Linked List.
     - [Click to Jump in Documentation.](./Linked%20List/Circular_LinkedList.md)
     - [Click to Jump in Programs.](./Linked%20List/Circular_LinkedList.c)
-
 ---
+## Apps of Linked List:
+ 1. Single Linked List. 
+    - [Click to Jump in Documentation.](./Linked%20List/Polynomial_App_LinkedList.md)
+    - [Click to Jump in Programs.](./Linked%20List/Polynomial_App_LinkedList.c)
