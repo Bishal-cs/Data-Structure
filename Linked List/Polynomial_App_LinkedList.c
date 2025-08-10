@@ -60,3 +60,35 @@ struct node *Display(struct node *start){
     printf("\n");
     return start;
 }
+// Addition of two Polynomial function ---
+struct node *Addition(struct node *start1, struct node *start2, float Co, int Ex){
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    temp -> Ex = Ex;
+    temp -> Co = Co;
+    struct node *p1 = start1, *p2 = start2;
+    struct node *start3 = NULL;
+    while(p1 != NULL || p2 != NULL){
+        if(p1 -> Ex > p2 -> Ex){
+            start3 = Insert_Last(start3, p1 -> Co, p1 -> Ex);
+            p1 = p1 -> link;
+        }
+        else if(p1 -> Ex < p2 -> Ex){
+            start3 = Insert_Last(start3, p2 -> Co, p2 -> Ex);
+            p2 = p2 -> link;
+        }
+        else{
+            float c = p1 -> Co + p2 -> Co;
+            if(c != 0)
+                start3 = Insert_Last(start3, c, p1 -> Ex);
+            p1 = p1 -> link;
+            p2 = p2 -> link;
+        }
+    }
+    while(p1 != NULL){
+        start3 = Insert_Last(start3, p1 -> Co, p1 -> Ex);
+    }
+    while(p2 != NULL){
+        start3 = Insert_Last(start3, p2 -> Co, p2 -> Ex);
+    }
+    return start3;
+}
