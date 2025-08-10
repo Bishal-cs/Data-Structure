@@ -60,6 +60,28 @@ struct node *Display(struct node *start){
     printf("\n");
     return start;
 }
+// Insert Last on Polynomial Function that is insert the value in the list what i send from addition ---
+struct node *Addition(struct node *start, float Co, int Ex){
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    temp -> Ex = Ex;
+    temp -> Co = Co;
+    struct node *st = start;
+    if(st == NULL){
+        temp -> link = start;
+        start = temp;
+    }
+    else{
+        while(st != NULL){
+            if(st -> link == NULL){
+                st -> link = temp;
+                temp -> link = NULL;
+                break;
+            }
+            st = st -> link;
+        }
+    }
+    return start;
+}
 // Addition of two Polynomial function ---
 struct node *Addition(struct node *start1, struct node *start2, float Co, int Ex){
     struct node *temp = (struct node *)malloc(sizeof(struct node));
