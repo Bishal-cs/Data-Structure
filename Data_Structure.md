@@ -20,18 +20,18 @@ ADT is a logical view of data and operations to manupulate of data. Data Structu
 
 ## Types of Linked List:
  1. Single Linked List. 
-    - [Click to Jump in Documentation.](./Linked%20List/Single_LinkedList.md)
-    - [Click to Jump in Programs.](./Linked%20List/Single_LinkedList.c)
+    - [Click to Jump in Single Documentation.](./Linked%20List/Single_LinkedList.md)
+    - [Click to Jump in Single Programs.](./Linked%20List/Single_LinkedList.c)
 
  2. Doubly Linked List.
-    - [Click to Jump in Documentation.](./Linked%20List/Doubly_LinkedList.md)
-    - [Click to Jump in Programs.](./Linked%20List/Doubly_LinkedList.c)
+    - [Click to Jump in Doubly Documentation.](./Linked%20List/Doubly_LinkedList.md)
+    - [Click to Jump in Doubly Programs.](./Linked%20List/Doubly_LinkedList.c)
 
  3. Circular Linked List.
-    - [Click to Jump in Documentation.](./Linked%20List/Circular_LinkedList.md)
-    - [Click to Jump in Programs.](./Linked%20List/Circular_LinkedList.c)
+    - [Click to Jump in Circular Documentation.](./Linked%20List/Circular_LinkedList.md)
+    - [Click to Jump in Circular Programs.](./Linked%20List/Circular_LinkedList.c)
 ---
 ## Apps of Linked List:
- 1. Single Linked List. 
-    - [Click to Jump in Documentation.](./Linked%20List/Polynomial_App_LinkedList.md)
-    - [Click to Jump in Programs.](./Linked%20List/Polynomial_App_LinkedList.c)
+ 1. Polynomial Arithmatic with linked list. 
+    - [Click to Jump in Polynomial Documentation.](./Linked%20List/Polynomial_App_LinkedList.md)
+    - [Click to Jump in Polynomial Programs.](./Linked%20List/Polynomial_App_LinkedList.c)
