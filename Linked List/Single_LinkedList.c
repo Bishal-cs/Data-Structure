@@ -310,7 +310,7 @@ void create_List(int n){
 }
 /*Some Special Question In Single Linked List*/
 // Write A Program To Find Smallest & Largest Number in Single Linked List ---
-int Smallest_Largest_Num(){
+void Smallest_Largest_Num(){
     if(start == NULL){
         printf("List is empty.\n");
         return;
@@ -325,6 +325,24 @@ int Smallest_Largest_Num(){
         st = st -> link;
     }
     printf("Smallest: %d, Largest: %d\n", Smallest, Largest);
+}
+// W.A.P to swap the First and Last Element of single linked list without swap the data.
+void Swap_First_Last(){
+    if(start == NULL || start->link == NULL){
+        printf("Swap Not possible.\n");
+        return;
+    }
+    struct node *prev = NULL, *last = start;
+    // Find last node and its previous node
+    while(last->link != NULL){
+        prev = last;
+        last = last->link;
+    }
+    // Swap nodes
+    last->link = start->link;
+    prev->link = start;
+    start->link = NULL;
+    start = last;
 }
 // Main function of the programs -----
 int main(){
@@ -348,7 +366,8 @@ int main(){
         printf("Press 11 Delete After a Value\n");
         printf("Press 12 Delete Specific Value\n");
         printf("Press 13 Display List\n");
-        printf("Press 14 Find Largest or Smallest Number.");
+        printf("Press 14 Find Largest or Smallest Number.\n");
+        printf("Press 15 swap the First and Last Element.\n");
         printf("Press any other key Exit\n");
         
 	    scanf("%d", &key);
@@ -421,6 +440,11 @@ int main(){
 	            break;
             case 14:
                 Smallest_Largest_Num();
+                break;
+            case 15:
+                Swap_First_Last();
+                printf("Swap Success.\n");
+                Display_List();
                 break;
 	        default:
 	            printf("Exiting...\n");

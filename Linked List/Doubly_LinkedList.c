@@ -356,7 +356,23 @@ void Create_Doubly_List(int num){
         p = N;
     }
 }
-
+/*Some Special Question In Single Linked List*/
+// W.A.P to swap the First and Last Element of Doubly linked list without swap the data.
+void Swap_First_Last(){
+    if(start == NULL || start -> right == NULL){
+        printf("Swap Not possible.\n");
+        return;
+    }
+    struct node *st = start;
+    while(st != NULL){
+        st = st -> right;
+    }
+    st -> right = start -> right;
+    start -> right = NULL;
+    st -> left -> right = start;
+    st -> left = NULL;
+    start = st;
+}
 // Main function of the Doubly Linked List ---
 int main(){
     int key, n;
@@ -381,6 +397,7 @@ int main(){
         printf("Press 12 Delete Specific Value (Delete_Match_value)\n");
         printf("Press 13 Delete Position Value(Delete_Position)\n");
         printf("Press 14 Display List (Display)\n");
+        printf("Press 15 swap the First and Last Element.\n");
         printf("Press any other key to Exit\n");
 
         // start the calling of the functions and run this with switch case:
@@ -437,6 +454,11 @@ int main(){
                 break;
             case 14:
                 printf("Displaying the all list ->\n");
+                Display();
+                break;
+            case 15:
+                Swap_First_Last();
+                printf("Swap Success.\n");
                 Display();
                 break;
             default:
