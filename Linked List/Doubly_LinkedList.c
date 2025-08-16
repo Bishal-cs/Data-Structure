@@ -70,7 +70,7 @@ void Insert_After(int value, int AfterValue){
 void Insert_Before(int value, int BV){
     struct node *temp = (struct node *)malloc(sizeof(struct node));
     temp -> data = value;
-    if(start == value){
+    if(start -> data == BV){
         printf("Data not delete!");
     }
     else{
@@ -363,15 +363,16 @@ void Swap_First_Last(){
         printf("Swap Not possible.\n");
         return;
     }
-    struct node *st = start;
-    while(st != NULL){
-        st = st -> right;
+    struct node *last = start, *prev = NULL;
+    while(last -> right != NULL){
+        prev = last;
+        last = last -> right;
     }
-    st -> right = start -> right;
+    last -> right = start -> right;
+    prev -> right = start;
     start -> right = NULL;
-    st -> left -> right = start;
-    st -> left = NULL;
-    start = st;
+    start = last;
+    printf("Swap Success.\n");
 }
 // Main function of the Doubly Linked List ---
 int main(){
@@ -458,7 +459,6 @@ int main(){
                 break;
             case 15:
                 Swap_First_Last();
-                printf("Swap Success.\n");
                 Display();
                 break;
             default:

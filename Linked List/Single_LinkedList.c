@@ -343,6 +343,7 @@ void Swap_First_Last(){
     prev->link = start;
     start->link = NULL;
     start = last;
+    printf("Swap Success.\n");
 }
 // Main function of the programs -----
 int main(){
@@ -443,7 +444,6 @@ int main(){
                 break;
             case 15:
                 Swap_First_Last();
-                printf("Swap Success.\n");
                 Display_List();
                 break;
 	        default:
