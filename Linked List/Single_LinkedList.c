@@ -308,6 +308,24 @@ void create_List(int n){
         p = N;
     }
 }
+/*Some Special Question In Single Linked List*/
+// Write A Program To Find Smallest & Largest Number in Single Linked List ---
+int Smallest_Largest_Num(){
+    if(start == NULL){
+        printf("List is empty.\n");
+        return;
+    }
+    struct node *st = start;
+    int Largest = start -> data, Smallest = start -> data;
+    while(st != NULL){
+        if(st -> data > Largest)
+            Largest = st -> data;
+        if(st -> data < Smallest)
+            Smallest = st -> data;
+        st = st -> link;
+    }
+    printf("Smallest: %d, Largest: %d\n", Smallest, Largest);
+}
 // Main function of the programs -----
 int main(){
     int n, key;
@@ -330,6 +348,7 @@ int main(){
         printf("Press 11 Delete After a Value\n");
         printf("Press 12 Delete Specific Value\n");
         printf("Press 13 Display List\n");
+        printf("Press 14 Find Largest or Smallest Number.");
         printf("Press any other key Exit\n");
         
 	    scanf("%d", &key);
@@ -400,6 +419,9 @@ int main(){
 	            printf("Your Linked list:\n");
 	            Display_List();
 	            break;
+            case 14:
+                Smallest_Largest_Num();
+                break;
 	        default:
 	            printf("Exiting...\n");
 	            exit(0);

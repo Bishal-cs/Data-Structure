@@ -50,9 +50,6 @@ struct node *Display(struct node *start){
     while(st != NULL){
         printf("%.2fx^%d",st-> Co, st-> Ex);
         if(st -> link != NULL && st -> link -> Co >= (-0)){
-            printf("-");
-        }
-        else{
             printf("+");
         }
         st = st -> link;
@@ -61,7 +58,7 @@ struct node *Display(struct node *start){
     return start;
 }
 // Insert Last on Polynomial Function that is insert the value in the list what i send from addition ---
-struct node *Addition(struct node *start, float Co, int Ex){
+struct node *Insert_Last(struct node *start, float Co, int Ex){
     struct node *temp = (struct node *)malloc(sizeof(struct node));
     temp -> Ex = Ex;
     temp -> Co = Co;
@@ -114,3 +111,4 @@ struct node *Addition(struct node *start1, struct node *start2, float Co, int Ex
     }
     return start3;
 }
+// Multiplaction on Polynominal function ---
