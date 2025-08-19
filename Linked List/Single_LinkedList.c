@@ -345,6 +345,24 @@ void Swap_First_Last(){
     start = last;
     printf("Swap Success.\n");
 }
+// W.A.P to move the Largest Element at the End of the single linked list.
+void Largest_at_last(){
+    if(start == NULL || start -> link == NULL){
+        printf("Move Not possible.\n");
+        return;
+    }
+    struct node *st = start, *prev = NULL;
+    int Largest = start -> data;
+    while(st -> link != NULL){
+        if(st -> data > Largest)
+            prev = st;
+            Largest = st -> data;
+        st = st -> link;
+    }
+    struct node *next = st -> link;
+    prev -> link = next;
+    st -> link = NULL;
+}
 // Main function of the programs -----
 int main(){
     int n, key;
