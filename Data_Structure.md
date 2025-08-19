@@ -35,3 +35,11 @@ ADT is a logical view of data and operations to manupulate of data. Data Structu
  1. Polynomial Arithmatic with linked list. 
     - [Click to Jump in Polynomial Documentation.](./Linked%20List/Polynomial_App_LinkedList.md)
     - [Click to Jump in Polynomial Programs.](./Linked%20List/Polynomial_App_LinkedList.c)
+---
+
+# Stack:
+ - Stack is a linear list data data structure where the insertin and deletion are allowed in one end. Called top of the stack which points the top most element od the stack. We can insert the element through the top pointer & also delete from the top pointer.
+
+ The insertion operation in stack is known as *PUSH* & Delete operation is known as *POP*. Before any element, we must check whethere there is a space in the stack or not. If there is not engouh space the stack is said to be *Overflow* condition & the new element cannot be pushed in this schenerio if we wnat to perform the pop operation & check that the stack is empty or not. If the stack is empty the stack is said to be *underflow* condition.
+
+ We can see that the element which is pushed / inserted last - that element is poped out / delete from the stack. That is the reson or this beheviour is called ***LIFO(Last In First Out)*** data structure. 
