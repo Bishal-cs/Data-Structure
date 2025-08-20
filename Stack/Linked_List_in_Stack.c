@@ -18,7 +18,7 @@ void Push(int value){
     struct stack *temp = (struct stack *)malloc(sizeof(struct stack));
     if(top == NULL){
         printf("Stack Overflow !\n");
-        return -1;
+        return;
     }
     else{
         temp -> link = top;
@@ -46,22 +46,68 @@ int Peek(){
         return -1;
     }
     else{
-        return top -> data;
+        int x = top -> data;
+        return x;
     }
 }
 
 void Display(){
-    printf("Stack = ")
+    printf("Stack = ");
     if(is_Empty() == 1){
-        printf("TOP -> NULL");
+        printf("TOP -> NULL\n");
     }
     else{
         struct stack *p = top;
-        printf("TOP -> ")
+        printf("TOP -> ");
         while(p != NULL){
             printf("%d", p -> data);
             p = p -> link;
         }
         printf("NULL\n");
+    }
+}
+
+void main(){
+    int key, value;
+    int maxOption = 15;
+    while(1){
+        printf("Press 1 to push.\n");
+        printf("Press 2 to pop.\n");
+        printf("Press 3 to peek.\n");
+        printf("Press 4 to Display.\n");
+        printf("Press Any key to Exit.\n --> ");
+        scanf("%d", &key);
+        if(key < 1 || key > maxOption) {
+            printf("Wrong choice!\n");
+            exit(0);
+            break;
+        }
+        switch(key){
+            case 1:
+                printf("Enter Data to insert in stack: ");
+                scanf("%d", &value);
+                Push(value);
+                break;
+            case 2:
+                if(POP() == -1){
+                    return;
+                }
+                else{
+                    printf("POP success! the data is - %d", POP());
+                    break;
+                }
+            case 3:
+                if(Peek() == -1){
+                    return;
+                }
+                else{
+                    printf("Your Top data is - %d", Peek());
+                    break;
+                }
+            case 4:
+                Display();
+                break;
+            
+        }
     }
 }
