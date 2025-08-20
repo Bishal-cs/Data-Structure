@@ -50,3 +50,13 @@ int PEEK(){
     return stack[top];
 }
 // Display function is used to Show the data in the stack ---
+void Display(){
+    if(is_Empty() == 1){
+        printf("Stack Underflow !");
+        return;
+    }
+    for(int i = 0; i <= top; i++){
+        printf("%d", stack[i]);
+    }
+    printf('<- top');
+}
