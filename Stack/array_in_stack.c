@@ -18,3 +18,13 @@ int is_Empty(){
     else 
         return 0;
 }
+// Push function is used to push data in stack ---
+void PUSH(int data){
+    if(is_Full() == 1){
+        printf("Stack Overflow !");
+        return;
+    }
+    else{
+        
+    }
+} 
