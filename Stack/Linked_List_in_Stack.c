@@ -16,14 +16,13 @@ int is_Empty(){
 }
 void Push(int value){
     struct stack *temp = (struct stack *)malloc(sizeof(struct stack));
-    if(top == NULL){
-        printf("Stack Overflow !\n");
+    if(temp == NULL){
+        printf("Memory allocation failed! Stack Overflow.\n");
         return;
     }
-    else{
-        temp -> link = top;
-        top = temp;
-    }
+    temp->data = value;
+    temp->link = top;
+    top = temp;
 }
 
 int POP(){
@@ -53,15 +52,14 @@ int Peek(){
 
 void Display(){
     printf("Stack = ");
-    if(is_Empty() == 1){
+    if(is_Empty()){
         printf("TOP -> NULL\n");
-    }
-    else{
+    } else {
         struct stack *p = top;
         printf("TOP -> ");
         while(p != NULL){
-            printf("%d", p -> data);
-            p = p -> link;
+            printf("%d -> ", p->data);
+            p = p->link;
         }
         printf("NULL\n");
     }
@@ -93,7 +91,7 @@ void main(){
                     return;
                 }
                 else{
-                    printf("POP success! the data is - %d", POP());
+                    printf("\nPOP success! the data is - %d", POP());
                     break;
                 }
             case 3:
