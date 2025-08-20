@@ -25,6 +25,19 @@ void PUSH(int data){
         return;
     }
     else{
-        
+
     }
-} 
+}
+// Pop Function is used to free data in stack ---
+int POP(){
+    int y;
+    if(is_Empty() == 1){
+        printf("Stack Underflow !");
+        return -1;
+    }
+    else{
+        y = stack[top];
+        top --;
+    }
+    return y;
+}
