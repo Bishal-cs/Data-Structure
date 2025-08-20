@@ -17,7 +17,7 @@ int is_Empty(){
 void Push(int value){
     struct stack *temp = (struct stack *)malloc(sizeof(struct stack));
     if(top == NULL){
-        printf("Stack Overflow !");
+        printf("Stack Overflow !\n");
         return -1;
     }
     else{
@@ -42,10 +42,26 @@ int POP(){
 
 int Peek(){
     if(top == NULL){
-        printf("Stack Overflow !");
+        printf("Stack Overflow !\n");
         return -1;
     }
     else{
         return top -> data;
+    }
+}
+
+void Display(){
+    printf("Stack = ")
+    if(is_Empty() == 1){
+        printf("TOP -> NULL");
+    }
+    else{
+        struct stack *p = top;
+        printf("TOP -> ")
+        while(p != NULL){
+            printf("%d", p -> data);
+            p = p -> link;
+        }
+        printf("NULL\n");
     }
 }
