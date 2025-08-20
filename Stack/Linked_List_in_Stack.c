@@ -39,3 +39,13 @@ int POP(){
         return x;
     }
 }
+
+int Peek(){
+    if(top == NULL){
+        printf("Stack Overflow !");
+        return -1;
+    }
+    else{
+        return top -> data;
+    }
+}
