@@ -43,6 +43,7 @@ ADT is a logical view of data and operations to manupulate of data. Data Structu
  The insertion operation in stack is known as *PUSH* & Delete operation is known as *POP*. Before any element, we must check whethere there is a space in the stack or not. If there is not engouh space the stack is said to be *Overflow* condition & the new element cannot be pushed in this schenerio if we wnat to perform the pop operation & check that the stack is empty or not. If the stack is empty the stack is said to be *underflow* condition.
 
  We can see that the element which is pushed / inserted last - that element is poped out / delete from the stack. That is the reson or this beheviour is called ***LIFO(Last In First Out)*** data structure. 
+ 
 ---
    ### Stack implementations:
    1. Stack Implementation in array.
