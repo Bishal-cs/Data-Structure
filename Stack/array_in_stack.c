@@ -41,3 +41,12 @@ int POP(){
     }
     return y;
 }
+// Peek Function is used to show the top of the element ---
+int PEEK(){
+    if(is_Empty() == 1){
+        printf("Stack Underflow !");
+        return -1;
+    }
+    return stack[top];
+}
+// Display function is used to Show the data in the stack ---
