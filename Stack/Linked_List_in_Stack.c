@@ -26,3 +26,16 @@ void Push(int value){
     }
 }
 
+int POP(){
+    if(is_Empty() == 1){
+        return -1;
+    }
+    else{
+        struct stack *p = top; 
+        top = top -> link;
+        int x = p -> data;
+        p -> link = NULL;
+        free(p);
+        return x;
+    }
+}
