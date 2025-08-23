@@ -363,6 +363,23 @@ void Largest_at_last(){
     prev -> link = next;
     st -> link = NULL;
 }
+// W.A.P to take a number as user input and find the frequency of the number ---
+int num_of_freq(int freq){
+    if(start == NULL){
+        printf("There is no node to check freq");
+        return 0;
+    }
+    int c = 0;
+    struct node *st = start;
+    while(st != NULL){
+        if(st -> data == freq){
+            c = c + 1;
+        }
+        st = st -> link;
+    }
+    printf("Your number of freq is -> %d", c);
+    return c;
+}
 // Main function of the programs -----
 int main(){
     int n, key;
@@ -387,6 +404,7 @@ int main(){
         printf("Press 13 Display List\n");
         printf("Press 14 Find Largest or Smallest Number.\n");
         printf("Press 15 swap the First and Last Element.\n");
+        printf("Press 16 check the freq of the number.\n");
         printf("Press any other key Exit\n");
         
 	    scanf("%d", &key);
@@ -463,6 +481,11 @@ int main(){
             case 15:
                 Swap_First_Last();
                 Display_List();
+                break;
+            case 16:
+                printf("Enter the number to check freq -> ");
+                scanf("%d", &x);
+                num_of_freq(x);
                 break;
 	        default:
 	            printf("Exiting...\n");
