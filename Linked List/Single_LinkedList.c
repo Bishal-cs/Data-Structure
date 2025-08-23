@@ -326,6 +326,23 @@ void Smallest_Largest_Num(){
     }
     printf("Smallest: %d, Largest: %d\n", Smallest, Largest);
 }
+// W.A.P to take a number as user input and find the frequency of the number ---
+int num_of_freq(int freq){
+    if(start == NULL){
+        printf("There is no node to check freq");
+        return 0;
+    }
+    int c = 0;
+    struct node *st = start;
+    while(st != NULL){
+        if(st -> data == freq){
+            c = c + 1;
+        }
+        st = st -> link;
+    }
+    printf("Your number of freq is -> %d", c);
+    return c;
+}
 // W.A.P to swap the First and Last Element of single linked list without swap the data.
 void Swap_First_Last(){
     if(start == NULL || start->link == NULL){
@@ -362,23 +379,6 @@ void Largest_at_last(){
     struct node *next = st -> link;
     prev -> link = next;
     st -> link = NULL;
-}
-// W.A.P to take a number as user input and find the frequency of the number ---
-int num_of_freq(int freq){
-    if(start == NULL){
-        printf("There is no node to check freq");
-        return 0;
-    }
-    int c = 0;
-    struct node *st = start;
-    while(st != NULL){
-        if(st -> data == freq){
-            c = c + 1;
-        }
-        st = st -> link;
-    }
-    printf("Your number of freq is -> %d", c);
-    return c;
 }
 // Main function of the programs -----
 int main(){
