@@ -20,3 +20,15 @@ int is_Empty(){
         return 0;
     }
 }
+// Enqueue Function is used to add element ---
+void enqueue(int value){
+    if(is_Full() == 1){
+        printf("Queue Overflow! \n");
+        return -1;
+    }
+    R++;
+    Queue[R] == value;
+    if(F == -1 && R == -1){
+        F++;
+    }
+}
