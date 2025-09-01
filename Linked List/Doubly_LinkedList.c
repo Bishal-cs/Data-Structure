@@ -71,7 +71,7 @@ void Insert_Before(int value, int BV){
     struct node *temp = (struct node *)malloc(sizeof(struct node));
     temp -> data = value;
     if(start -> data == BV){
-        printf("Data not delete!");
+        printf("Cannot insert before first node!");
     }
     else{
         struct node *p = start;
@@ -198,7 +198,7 @@ int Delete_Before(int value){
     }
     else{
         struct node *curr = start;
-        if(start -> right -> data == value){
+        if(start -> right != NULL && start -> right -> data == value){
             start = curr -> right;
             curr -> right = NULL;
             start -> left = NULL;
@@ -302,6 +302,8 @@ int Delete_Position(int pos){
     else if(pos == 1){
         struct node *p = start;
         start = start -> right;
+        if(start != NULL)
+            start -> left = NULL;
         x = p -> data;
         free(p);
     }
@@ -363,15 +365,18 @@ void Swap_First_Last(){
         printf("Swap Not possible.\n");
         return;
     }
-    struct node *last = start, *prev = NULL;
+    struct node *last = start, *st = start;
     while(last -> right != NULL){
-        prev = last;
         last = last -> right;
     }
-    last -> right = start -> right;
-    prev -> right = start;
-    start -> right = NULL;
-    start = last;
+    struct node *last_prev = last -> left;
+    last -> left = NULL;
+    st -> right = NULL;
+    st -> left = last_prev;
+    last_prev -> right = st;
+    start -> left = last;
+    last -> left = start;
+    start = start -> left;
     printf("Swap Success.\n");
 }
 // Main function of the Doubly Linked List ---
@@ -441,12 +446,30 @@ int main(){
             case 7:
                 printf("Enter any value to search from your node ::");
                 scanf("%d", &arg1);
-                Search_Value(arg1);
+                int pos = Search_Value(arg1);
+                if(pos != -1) printf("Found at position: %d\n", pos);
+                else printf("Not found\n");
+                break;
+            case 8:
+                Delete_First();
+                break;
+            case 9:
+                Delete_Last();
                 break;
             case 10:
                 printf("Enter Value to delete before value ->");
                 scanf("%d", &arg1);
                 Delete_Before(arg1);
+                break;
+            case 11:
+                printf("Enter Value to delete after value ->");
+                scanf("%d", &arg1);
+                Delete_After(arg1);
+                break;
+            case 12:
+                printf("Enter Value to delete ->");
+                scanf("%d", &arg1);
+                Delete_Match_value(arg1);
                 break;
             case 13:
                 printf("Enter position value to delete ->");
@@ -459,7 +482,6 @@ int main(){
                 break;
             case 15:
                 Swap_First_Last();
-                Display();
                 break;
             default:
                 printf("Exiting...\n");
