@@ -32,3 +32,13 @@ void enqueue(int value){
         F++;
     }
 }
+// Dequeue Function is used to delete element ---
+int dequeue(){
+    if(is_Empty() == 1){
+        printf("Queue Underflow! \n");
+        return -1;
+    }
+    int value = Queue[F];
+    F++;
+    return value;
+}
