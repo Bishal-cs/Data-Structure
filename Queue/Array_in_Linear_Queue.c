@@ -42,3 +42,11 @@ int dequeue(){
     F++;
     return value;
 }
+// Peek Function is used to get the front element ---
+int peek(){
+    if(is_Empty() == 1){
+        printf("Queue Underflow! \n");
+        return -1;
+    }
+    return Queue[F];
+}
