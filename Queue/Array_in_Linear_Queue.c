@@ -50,3 +50,14 @@ int peek(){
     }
     return Queue[F];
 }
+// Display Function is used to display all the elements ---
+void display(){
+    if(is_Empty() == 1){
+        printf("Queue Underflow! \n");
+        return -1;
+    }
+    for(int i = F; i <= R; i++){
+        printf("%d ", Queue[i]);
+    }
+    printf("F = %d, R = %d", F, R);
+}
