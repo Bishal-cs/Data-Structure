@@ -420,7 +420,7 @@ int main(){
 	            InsertEnd(x);
 	            break;
 	        case 3:
-	            printf("Enter value to insert in position:");
+	            printf("Enter value to insert:");
 	            scanf("%d", &x);
 	            printf("Enter the Position -");
 	            scanf("%d", &pos);
@@ -434,9 +434,9 @@ int main(){
 	            InsertAfter(x, AV);
 	            break;
 	        case 5:
-	            printf("Enter value to insert");
+	            printf("Enter value to insert -> ");
 	            scanf("%d", &x);
-	            printf("Enter the after value to insert after.");
+	            printf("Enter the after value to insert after -> ");
 	            scanf("%d", &BV);
 	            InsertBefore(x, BV);
 	            break;
