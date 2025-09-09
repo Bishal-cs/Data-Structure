@@ -71,7 +71,7 @@ void Insert_Before(int value, int BV){
     struct node *temp = (struct node *)malloc(sizeof(struct node));
     temp -> data = value;
     if(start -> data == BV){
-        printf("Cannot insert before first node!");
+        printf("Cannot insert before first node!\n");
     }
     else{
         struct node *p = start;
@@ -92,7 +92,7 @@ void Insert_Before(int value, int BV){
             p = p -> right;
         }
     }
-    printf("Data- %d not found!", BV);
+    printf("Data- %d not found!\n", BV);
 }
 
 // Insert Position Node ---
@@ -101,7 +101,7 @@ void Insert_Position_Node(int value, int pos){
     temp -> data = value;
     struct node *p = start;
     if(start == NULL){
-        printf("Doubly Linked List Empty!");
+        printf("Doubly Linked List Empty!\n");
         return;
     }
     else if(pos == 1){
@@ -142,6 +142,7 @@ int Search_Value(int value){
     int c = 0;
     struct node *st = start;
     while(st != NULL){
+        c++;
         if(st -> data == value){
             return c;
         }
