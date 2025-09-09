@@ -4,3 +4,4 @@ The insertion operation in stack is known as ***PUSH*** & delete operation is kn
 We can see that the element which is pushed / inserted last - that element is poped out / delete from from the stack. That is the reson or this behaviour is called **LIFO** - *Last in first out* data structure.
 
 ### Structure of stack using array -
+### Structure of stack using Linked list -
