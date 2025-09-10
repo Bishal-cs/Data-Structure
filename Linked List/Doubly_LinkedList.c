@@ -367,10 +367,11 @@ void Swap_First_Last(){
         return;
     }
     struct node *last = start, *st = start;
-    while(last -> right != NULL){
+    while(last != NULL){
         last = last -> right;
     }
     struct node *last_prev = last -> left;
+    start = start -> right;
     last -> left = NULL;
     st -> right = NULL;
     st -> left = last_prev;
