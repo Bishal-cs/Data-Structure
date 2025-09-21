@@ -132,3 +132,33 @@ struct node *Multiplaction(struct node *start1, struct node *start2, float Co, i
         }
     }
 }
+
+// Create list in this polinomial function ---
+struct node *createlist(struct node* start, int n){
+    struct node *p = start;
+    int i, E;
+    float C;
+    for(i = 1; i <= n; i++){
+        printf("Enter Coefficent -> ");
+        scanf("%f", &C);
+        printf('Enter Exponent -> ');
+        scanf("%d", &E);
+        struct node *temp = (struct node *)malloc(sizeof(struct node));
+        temp -> Co = C;
+        temp -> Ex = E;
+        temp -> link = NULL;
+        if(start == NULL){
+            start = temp;
+        }
+        else{
+            p -> link = temp;
+        }
+        p = temp;
+    }
+    return start;
+}
+
+// display function use to display the structure the node ---
+void Display(struct node *start){
+    
+}
