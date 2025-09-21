@@ -160,5 +160,23 @@ struct node *createlist(struct node* start, int n){
 
 // display function use to display the structure the node ---
 void Display(struct node *start){
-    
+    if(start == NULL){
+        printf("Polinomial is Empty!");
+        return;
+    }
+    struct node *p = start;
+    while(p != NULL){
+        if(p -> Co != 0){
+            if(p -> Ex == 0)
+                printf("%f", p -> Co);
+            else if(p -> Ex == 1)
+                printf("%f", p -> Co);
+            else{
+                printf("%fx^%d", p -> Co, P -> Ex);
+                if(p -> link != NULL && p -> link -> Co > 0)
+                    printf("+");
+            }
+            p = p -> link;
+        }
+    }
 }
