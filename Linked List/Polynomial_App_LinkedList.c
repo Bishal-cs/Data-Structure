@@ -112,3 +112,23 @@ struct node *Addition(struct node *start1, struct node *start2, float Co, int Ex
     return start3;
 }
 // Multiplaction on Polynominal function ---
+struct node *Multiplaction(struct node *start1, struct node *start2, float Co, int Ex){
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    temp -> Ex = Ex;
+    temp -> Co = Co;
+    struct node *start3 = NULL;
+    struct node *p1 = start1, p2 = start2;
+    if(p1 == NULL || p2 == NULL){
+        start3 = NULL;
+    }
+    else{
+        while(p1 != NULL){
+            p2 = start;
+            while(p2 != NULL){
+                start3 = insert(start3, p1 -> Co * p2 -> Co, p1 -> Ex + p2 -> Ex)
+                p2 = p2 -> link;
+            }
+            p1 = p1 -> link;
+        }
+    }
+}
